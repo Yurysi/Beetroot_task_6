@@ -17,5 +17,5 @@ while a <= 10:
     num_list = [randint(0, 999) for i in range(10)]
     print(num_list)
     b = max(num_list)
-    print(f"Max integer in tuple: {b}\n")
+    print(f"Max integer in list: {b}\n")
     a += 1
