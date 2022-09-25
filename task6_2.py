@@ -11,16 +11,16 @@ from random import randint
 
     Constraints: use only while loop and random module to generate numbers
 """
-first_list = []
-second_list = []
+first_list = [randint(1, 10) for item in range(10)]
+second_list = [randint(1, 10) for item in range(10)]
 third_list = []
 a = 0
-while a < 1:
-    first_list = [randint(1, 10) for item in range(10)]
-    second_list = [randint(1, 10) for item in range(10)]
-    a += 1
-    third_list.extend(first_list)
-    third_list.extend(second_list)
-    third_list = list(set(third_list))
-    print(f"first_list: {first_list}\nsecond_list: {second_list}\n")
-    print(f"This is list without dublicates:\n{third_list}")
+print(f"first_list: {sorted(first_list)}\nsecond_list: {sorted(second_list)}\n")
+while a < 10:
+    if first_list[a] in second_list:
+        third_list.append(first_list[a])
+        a += 1
+    else:
+        a += 1
+third_list = list(set(third_list))
+print(f"This is list without dublicates:\n{sorted(third_list)}")
